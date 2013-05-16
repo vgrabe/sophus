@@ -1,0 +1,1 @@
+ROS package of https://github.com/strasdat/Sophus
