@@ -9,11 +9,12 @@ sophus: download
 	mkdir -p build && cd build && \
 	cmake -DCMAKE_INSTALL_PREFIX=`pwd`/..  ../$(GIT_DIR) && \
   	make install
+  	touch ROS_NOBUILD
 
 download:
 	git clone $(GIT_URL) $(GIT_DIR)
 	cd $(GIT_DIR) && git checkout $(GIT_REVISION)
 
 clean: 
-	rm -rf $(GIT_DIR) patched build include lib rospack_nosubdirs
+	rm -rf $(GIT_DIR) patched build include lib rospack_nosubdirs ROS_NOBUILD
 
